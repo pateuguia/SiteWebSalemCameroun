@@ -1,0 +1,17 @@
+{% extends 'layout/default_page_normal.html' %}
+
+
+{% block body %}
+    <h1>Blog</h1>
+
+{% for value in post %}
+    <article>
+        <h2><a href="{{url_for('post_show', id = value.id)}}">{{value.id}} - {{value.title}}</a></h2>
+        <p>{{value.content}}</p>
+    </article>
+
+    <hr>
+{% endfor %}
+
+{% endblock body %}
+
